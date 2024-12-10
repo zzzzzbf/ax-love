@@ -1,0 +1,122 @@
+        /*@import url("https://fonts.googleapis.com/css2?family=Courgette&display=swap");
+
+        * {
+        	box-sizing: border-box
+        }
+
+         html,
+        body {
+        	height: 100%;
+        	font-family: "Courgette", cursive
+        }
+
+        body {
+        	display: flex;
+        	justify-content: center;
+        	align-items: center;
+        	background-color: #ffffff;
+        	overflow: hidden
+        } */
+
+        .baloon {
+        	height: calc(1.2 * var(--width));
+        	width: var(--width);
+        	border: 2px solid black;
+        	border-radius: 50% 50% 50% 50%/45% 45% 55% 55%;
+        	background-color: red;
+        	position: absolute;
+        	margin-bottom: 20px;
+        	top: 100%;
+        	-webkit-animation: animate 5s ease-in-out infinite;
+        	animation: animate 5s ease-in-out infinite;
+        	-webkit-animation-delay: calc(var(--animationDelay) * 0.15);
+        	animation-delay: calc(var(--animationDelay) * 0.15);
+        	z-index: 1;
+        	opacity: 0.75
+        }
+
+        .baloon::before,
+        .baloon::after {
+        	content: "";
+        	position: absolute;
+        	top: 0;
+        	margin: auto;
+        	border-radius: inherit;
+        	opacity: 0.25
+        }
+
+        .baloon::before {
+        	border-left: calc(var(--width) * 0.15) solid #ffffff;
+        	left: 4px;
+        	height: 100%;
+        	width: calc(0.95 * var(--width))
+        }
+
+        .baloon::after {
+        	height: 100%;
+        	width: 80%;
+        	right: 4px;
+        	border-right: calc(var(--width) * 0.15) solid #000000
+        }
+
+        .baloon span {
+        	display: inline-flex;
+        	position: absolute;
+        	height: calc(0.4 * var(--width));
+        	width: calc(0.04 * var(--width));
+        	top: 100%;
+        	left: 0;
+        	right: 0;
+        	margin: auto;
+        	background-image: inherit;
+        	z-index: -1;
+        	border-radius: 20px;
+        	border: 2px solid black
+        }
+
+        .baloon span::before,
+        .baloon span::after {
+        	content: "";
+        	position: absolute;
+        	top: 0;
+        	left: 50%;
+        	transform: translatex(-50%);
+        	border-radius: 4px;
+        	background-image: inherit;
+        	margin: auto;
+        	width: calc(0.1 * var(--width));
+        	height: calc(0.12 * var(--width));
+        	border-radius: 500px;
+        	border: 2px solid black
+        }
+
+        .baloon span::after {
+        	top: calc(0.14 * var(--width));
+        	width: calc(0.08 * var(--width));
+        	height: calc(0.02 * var(--width))
+        }
+
+        .wishes {
+        	font-size: 4rem;
+        	color: #242423
+        }
+
+        @-webkit-keyframes animate {
+        	from {
+        		top: 100%
+        	}
+
+        	to {
+        		top: -55%
+        	}
+        }
+
+        @keyframes animate {
+        	from {
+        		top: 100%
+        	}
+
+        	to {
+        		top: -55%
+        	}
+        }
